@@ -1,15 +1,15 @@
 
-public class MessageValidator implements MessageService{
-   private MessageService origin;
-   private Validator validator;
+public class MessageValidator implements ContentService {
+    private ContentService origin;
+    private Validator validator;
 
-   public MessageValidator(MessageService origin, Validator validator) {
+    public MessageValidator(ContentService origin, Validator validator) {
        this.origin = origin;
        this.validator = validator;
-   }
+    }
 
     public String enrich(Message message) {
-        if (validator.correct(message)) {
+        if (validator.isCorrect(message)) {
             return origin.enrich(message);
         }
         addToNonEnrichMessages(message);

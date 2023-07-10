@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class EnrichmentService implements MessageService{
+public class EnrichmentService implements ContentService {
     private ContentEnricher contentEnricher;
 
     public EnrichmentService(ContentEnricher contentEnricher) {

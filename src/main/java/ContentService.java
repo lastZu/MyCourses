@@ -1,3 +1,3 @@
-public interface MessageService {
+public interface ContentService {
     public String enrich(Message message);
 }
