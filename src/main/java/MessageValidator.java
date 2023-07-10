@@ -9,7 +9,9 @@ public class MessageValidator implements ContentService {
     }
 
     public String enrich(Message message) {
-        if (validator.isCorrect(message)) {
+        boolean messageStatus = validator.isCorrect(message);
+        HistorySaver.addToHistory(message, messageStatus);
+        if (messageStatus) {
             return origin.enrich(message);
         }
         return message.getContent();
