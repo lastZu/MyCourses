@@ -12,7 +12,7 @@ public class EnrichmentService implements ContentService {
         final String msisdn = getMsisdn(content);
         final HashMap<String, String> enrichment = contentEnricher.enrichmentValue(msisdn);
         final String newContent = contentEnricher.enrich(content, enrichment);
-        addToEnrichMessages(message);
+
         return newContent;
     }
 }

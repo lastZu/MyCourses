@@ -12,7 +12,6 @@ public class MessageValidator implements ContentService {
         if (validator.isCorrect(message)) {
             return origin.enrich(message);
         }
-        addToNonEnrichMessages(message);
         return message.getContent();
     }
 }
