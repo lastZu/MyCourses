@@ -5,4 +5,8 @@ public class Message {
     public enum EnrichmentType {
         MSISDN;
     }
+
+    public String getContent() {
+        return this.content;
+    }
 }
